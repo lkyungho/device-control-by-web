@@ -6,3 +6,7 @@ This project is a remote temperature control system. Users can control temperatu
 * Hardware: Raspberry Pi, DHT22(temperature and humidity sensor), LCD, Circuit design
 * Software: Linux OS, Python, HTML, CSS, AJAX, CGI, AWS
 ```
+
+## _1. System Diagram_
+
+![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-diagram.JPG "System Diagram")
