@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Temperature Acquisition and Device control Project</title>
+	<style>
+	.button {
+		background-color: #e7e7e7;
+		color: black;font-size: 14px;
+		text-align: center;vertical-align: middle;
+		display: inline-block;
+		padding: 8px 14px;border: 1px solid #555555;border-radius: 12px;
+		transition-duration: 0.5s;cursor: pointer;
+	}
+	.button:hover {
+		background-color: #555555;color: white;
+	}
+	.submit {
+		background-color: #e7e7e7;
+		font-size: 14px;
+		text-align: center;vertical-align: middle;
+		display: inline-block;
+		padding: 4px 8px;border: 0.5px solid #888888;border-radius: 4px;
+		transition-duration: 0.5s;cursor: pointer;
+	}
+	.submit:hover {
+		background-color: #888888;color: white;
+	}
+	</style>
+</head>
+<body>
+	<h1 style="background-color:#008cba;color:white;">&nbsp;[ Current Temperature ]</h1>
+	<ul><h2><div id="tempdata" style="color:#555555;"><br></div></h2></ul>
+	<br>
+	<h1 style="background-color:#008cba;color:white;">&nbsp;[ Automatic Temperature Control ]</h1>
+	<ul>
+	<h2><form action="javascript:" onsubmit="temp_setting();loaddata();">
+		<label for="setting" style="color:#555555;">Select temperature you want to set (in Celsius)</label><br>
+		<input type="number" style="font-size:18px;" id="tempset" name="setting" maxlength="4" size="4" min="-10" max="40">&ensp;
+		<input type="submit" class="submit" value="Confirm">
+		<button type="reset" class="submit" value="Reset" onclick="heating_off();cooling_off();initialize_tempset();temp_setting();">Reset</button>
+	</form></h2>
+	<h3><div id="checkset" style="color:#555555;">Current temperature setting: (No value set)</div></h3>
+	</ul>
+	<br>
+	<h1 style="background-color:#008cba;color:white;">&nbsp;[ Manual Device Control ]</h1>
+	<ul><form action="javascript:" onclick="initialize_tempset();temp_setting();">
+		<li><h2 style="color:#555555;">Heater&ensp;<input type="button" class="button" value="ON" id="led1" onclick="cooling_off();heating_on();"/>
+			<input type="button" class="button" value="OFF" id="led1" onclick="heating_off();"/></h2>
+				<h4><div id="heatstat" style="color:#f44336;"><br></div></h4>
+		<li><h2 style="color:#555555;">Cooler&ensp;<input type="button" class="button" value="ON" id="led2" onclick="heating_off();cooling_on();"/>
+			<input type="button" class="button" value="OFF" id="led2" onclick="cooling_off();"/></h2>
+				<h4><div id="coolstat" style="color:#f44336;"><br></div></h4>
+	</form></ul>
+	<script type="text/javascript">
+	window.onload = temp_setting(), statusheat(), statuscool(), loaddata();
+	setInterval(loaddata, 3000);
+
+	function temp_setting() {
+		var tempvalue = document.getElementById("tempset").value;
+		if(tempvalue == "") {
+			document.getElementById("checkset").innerHTML = "Current temperature setting: (No value set)";
+		} else {
+			document.getElementById("checkset").innerHTML = "Current temperature setting: <i style=\"font-size:22px;color:black;\">" + tempvalue + "</i> (Celsius)";
+		}
+	}
+	function initialize_tempset() {
+		document.getElementById("tempset").value = "";		
+	}
+
+	function heating_on() {
+		var xhttp = new XMLHttpRequest(); 
+		xhttp.open("POST", "/cgi-bin/heater.py", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("led1=power_on");
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("heatstat").innerHTML = this.responseText;
+			}
+		};
+	}
+	function heating_off() {
+		var xhttp = new XMLHttpRequest(); 
+		xhttp.open("POST", "/cgi-bin/heater.py", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("led1=power_off");
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("heatstat").innerHTML = this.responseText;
+			}
+		};
+	}
+	function statusheat() {
+		var xhttp = new XMLHttpRequest();	
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("heatstat").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/cgi-bin/heater.py", true);
+		xhttp.send();
+	}	
+
+	function cooling_on() {
+		var xhttp = new XMLHttpRequest(); 
+		xhttp.open("POST", "/cgi-bin/cooler.py", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("led2=power_on");
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("coolstat").innerHTML = this.responseText;
+			}
+		};
+	}
+	function cooling_off() {
+		var xhttp = new XMLHttpRequest(); 
+		xhttp.open("POST", "/cgi-bin/cooler.py", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("led2=power_off");
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("coolstat").innerHTML = this.responseText;
+			}
+		};
+	}
+	function statuscool() {
+		var xhttp = new XMLHttpRequest();	
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("coolstat").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/cgi-bin/cooler.py", true);
+		xhttp.send();
+	}
+	
+	function loaddata() {
+		var xhttp = new XMLHttpRequest();	
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("tempdata").innerHTML = this.responseText+" (Celsius)";
+				var ref = document.getElementById("tempset").value;
+				var data = this.responseText
+				if (ref != "") {
+					if(Number(ref)+0.5 > Number(data)) {
+						cooling_off();heating_on();
+					} else if(Number(ref)-0.5 < Number(data)) {
+						heating_off();cooling_on();
+					} else if(Number(ref) == Number(data)) {
+						heating_off();cooling_off();
+					}
+				}
+			}
+		};
+		xhttp.open("GET", "/cgi-bin/currentTemp.py", true);
+		xhttp.send();
+	}
+	</script>
+</body>
+</html>
+
