@@ -16,8 +16,7 @@ The base information of the system is temperature data from a DHT22 sensor. **`A
 DHT22 sensor is a versatile temperature and humidity sensor, which has built-in analog to digital converter (ADC).
 #### Acquision.py
 Adafruit DHT Python library is used to interact with the DHT22 temperature and humidity sensor.
-```
 [https://github.com/adafruit/Adafruit_Python_DHT](https://github.com/adafruit/Adafruit_Python_DHT)
-```
+
 
 
