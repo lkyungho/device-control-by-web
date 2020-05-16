@@ -10,3 +10,7 @@ This project is a remote temperature control system. Users can control temperatu
 ## _1. System Diagram_
 The base information of the system is temperature data from a DHT22 sensor. **`Acquisition.py`** acquires temperature data, which uses Adafruit DHT Humidity & Temperature Sensor Library. **`Acquisition.py`** distributes temperature data all over the system. **`dht22_project.htm`** is executed on a web browser. This module receives current temperature data from **`currentTemp.py`** and controls devices through network. **`DHT22AWS.py`** publishes current temperature information to AWS(Cloud service). Finally, **`tempInfoLCD.py`** operates a LCD device to show temperature to users.
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-diagram.JPG "System Diagram")
+## _2. Descriptions of the System_
+### (1) Temperature data acquisition
+#### 1) DHT22 Temperature and Humidity Sensor
+DHT22 sensor is a versatile temperature and humidity sensor, which has built-in analog to digital converter (ADC). 
