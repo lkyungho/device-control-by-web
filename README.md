@@ -17,7 +17,7 @@ DHT22 sensor is a versatile temperature and humidity sensor, which has built-in 
 #### Acquision.py
 Adafruit DHT Python library is used to interact with the DHT22 temperature and humidity sensor.
 ```
-https://github.com/adafruit/Adafruit_Python_DHT (https://github.com/adafruit/Adafruit_Python_DHT)
+[https://github.com/adafruit/Adafruit_Python_DHT](https://github.com/adafruit/Adafruit_Python_DHT)
 ```
 
 
