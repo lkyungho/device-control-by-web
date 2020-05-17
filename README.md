@@ -59,5 +59,9 @@ For demonstration purpose, the wiring for the heating device and the cooling dev
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-wiring.JPG "Wiring")
 
 ### (2) Web Page
+#### - Target temperature setting and device control
+When the current temperature is lower than the set temperature, the heating device is ON and the cooling device is OFF. When the current temperature is higher than the set temperature, the cooling device is ON and the heating device is OFF.
+#### - Manual Device Control
+If manual device control is activated, automatic temperature control is disabled. Also, when one of the heating device and the cooling device is ON, the other is OFF.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-webpage.JPG "Web page")
