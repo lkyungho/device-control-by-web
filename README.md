@@ -52,7 +52,7 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
 
-## _3. Result_
+## _3. Result_ (YouTube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg))
 ### (1) Wiring of the Devices
 For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
 
@@ -68,4 +68,4 @@ If manual device control is activated, automatic temperature control is disabled
 ### (3) AWS
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-aws.JPG "AWS")
 ### (4) Demonstration Video
-You Tube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg)
+
