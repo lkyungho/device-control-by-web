@@ -6,6 +6,7 @@ This project is a remote temperature control system, which is an integrated syst
 * Hardware: Raspberry Pi, DHT22(temperature and humidity sensor), LCD, Circuit design
 * Software: Linux OS, Python, HTML, CSS, AJAX, CGI, AWS
 ```
+(_YouTube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg)_)
 
 ## _1. System Diagram_
 The base information of the system is temperature data from a DHT22 sensor. **`Acquisition.py`** acquires temperature data, which uses Adafruit DHT Humidity & Temperature Sensor Library. **`Acquisition.py`** distributes temperature data all over the system. **`dht22_project.htm`** is executed on a web browser. This module receives current temperature data from **`currentTemp.py`** and controls devices through network. **`DHT22AWS.py`** publishes current temperature information to AWS(Cloud service). Finally, **`tempInfoLCD.py`** operates a LCD device to show temperature to users.
@@ -53,7 +54,6 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
 
 ## _3. Result_
-(_YouTube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg)_)
 ### (1) Wiring of the Devices
 For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
 
