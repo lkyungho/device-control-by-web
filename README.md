@@ -27,14 +27,16 @@ def read_data():
 Users can access the system through a web browser to control temperature. AJAX (Asynchronous JavaScript and XML), HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are used for user interaction.
 #### - dht22_project.htm
 There are three parts that show up on the web page; **`Current temperature`**, **`Automatic temperature control`**, and **`Manual device control`**. 
-> [Current temperature]
+> **[Current temperature]**
 >
 >the current temperature data is acquired from **`Acquisition.py`** and temperature information is displayed.
 
-> [Automatic temperature control]
+> **[Automatic temperature control]**
 >
-> The heating device or the cooling device is turned on to maintain the target temperature when a target temperature is set. The manual operation is disabled while this part is activated.
+> A heating device or a cooling device is turned on to maintain a target temperature when the target temperature is set. The manual operation is disabled while this part is activated.
 
-> [Manual device control]
+> **[Manual device control]**
 >
 > User can turn on and off for all the device. One of the heating device and the cooling device is off when the other is on. Automatic temperature control part is disabled while Manual device control part is activated.
+
+![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
