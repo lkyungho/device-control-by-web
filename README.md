@@ -34,7 +34,7 @@ To publish or subscribe topic and payload to AWS, MQTT (Message Queuing Telemetr
 
 **`DHT22AWS.py`** obtains temperature data from **`Acquisition.py`**. Topic name is `DHT_project/pub` and message is current temperature information.
 
-### (3) Temperature control through a web browser
+### (3) Temperature Control Through a Web Browser
 Users can access the system through a web browser to control temperature. AJAX, HTML and CSS are used for user interaction.
 #### - dht22_project.htm
 There are three parts that show up on the web page; **`Current temperature`**, **`Automatic temperature control`**, and **`Manual device control`**. 
@@ -51,3 +51,9 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 > User can turn on and off for the devices manually. When one of the heating device and the cooling device is on, the other is off. Automatic temperature control part is disabled while Manual device control part is activated.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
+
+## _3. Result_
+### (1) Wiring of the Devices
+For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
+
+![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-wiring.JPG "Wiring")
