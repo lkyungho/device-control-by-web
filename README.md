@@ -46,4 +46,4 @@ Temperature is displayed through a LCD device and AWS (Cloud service).
 #### - LCD device
 A 16 x 2 LCD (NHD‐0216BZ‐FL‐YBW) device is used to display current temperature data.
 
-**`tempInfoLCD.py`** uses methods from **`lcd.py`** _(For more information about **`lcd.py`**: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))_
+**`tempInfoLCD.py`** uses methods from **`lcd.py`** _(For more information about_ **`lcd.py`**_: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))_
