@@ -41,4 +41,9 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
 
-### (3) Temperature Display
+### (3) Temperature Monitoring
+Temperature is displayed through a LCD device and AWS (Cloud service).
+#### - LCD device
+A 16 x 2 LCD (NHD‐0216BZ‐FL‐YBW) device is used to display current temperature data.
+
+**`tempInfoLCD.py`** uses methods from **`lcd.py`** (For more information about **`lcd.py`**: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))
