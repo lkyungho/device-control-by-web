@@ -65,3 +65,5 @@ When the current temperature is lower than the set temperature, the heating devi
 If manual device control is activated, automatic temperature control is disabled. Also, when one of the heating device and the cooling device is ON, the other is OFF.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-webpage.JPG "Web page")
+### (3) AWS
+![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-aws.JPG "AWS")
