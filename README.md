@@ -57,3 +57,7 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-wiring.JPG "Wiring")
+
+### (2) Web Page
+
+![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-webpage.JPG "Web page")
