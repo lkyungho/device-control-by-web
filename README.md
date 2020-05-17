@@ -16,7 +16,7 @@ The base information of the system is temperature data from a DHT22 sensor. **`A
 DHT22 sensor is a versatile temperature and humidity sensor, which has built-in analog to digital converter (ADC).
 #### - Acquision.py
 Adafruit DHT Python library is used to interact with the DHT22 temperature and humidity sensor.
-(Link: [Adafruit_Python_DHT](https://github.com/adafruit/Adafruit_Python_DHT))
+(_Link: [Adafruit_Python_DHT](https://github.com/adafruit/Adafruit_Python_DHT)_)
 **`read_retry`** method from **`Adafruit_Python_DHT/Adafruit_DHT/common.py`** is used for data acquisition.
 ```python
 def read_data():
@@ -28,7 +28,7 @@ Temperature is displayed through a LCD device and AWS (Cloud service).
 #### - LCD device
 A 16 x 2 LCD (NHD‐0216BZ‐FL‐YBW) device is used to display current temperature data.
 
-**`tempInfoLCD.py`** uses methods from **`lcd.py`** _(For more information about_ **`lcd.py`**_: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))_
+**`tempInfoLCD.py`** uses methods from **`lcd.py`** (_For more information about_ **`lcd.py`**_: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python)_)
 #### - Publishing temperature data to AWS
 To publish or subscribe topic and payload to AWS, MQTT (Message Queuing Telemetry Transport) protocol is used and a Raspberry Pi works as a broker.
 
@@ -53,7 +53,7 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
 
 ## _3. Result_
-_(YouTube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg))_
+(_YouTube link: [Temperature Control System](https://youtu.be/GA4OK2kdgcg)_)
 ### (1) Wiring of the Devices
 For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
 
