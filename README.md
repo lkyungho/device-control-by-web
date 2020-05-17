@@ -24,7 +24,7 @@ def read_data():
 	return temperature, humidity
 ```
 ### (2) Temperature Control Through a Web Browser
-Users can access the system through a web browser to control temperature. AJAX (Asynchronous JavaScript and XML), HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are used for user interaction.
+Users can access the system through a web browser to control temperature. AJAX, HTML and CSS are used for user interaction.
 #### - dht22_project.htm
 There are three parts that show up on the web page; **`Current temperature`**, **`Automatic temperature control`**, and **`Manual device control`**. 
 > **[Current temperature]**
@@ -37,6 +37,8 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 
 > **[Manual device control]**
 >
-> User can turn on and off for all the device. One of the heating device and the cooling device is off when the other is on. Automatic temperature control part is disabled while Manual device control part is activated.
+> User can turn on and off for the devices manually. When one of the heating device and the cooling device is on, the other is off. Automatic temperature control part is disabled while Manual device control part is activated.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
+
+### (3) Temperature Display
