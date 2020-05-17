@@ -11,8 +11,8 @@ This project is a remote temperature control system, which is an integrated syst
 The base information of the system is temperature data from a DHT22 sensor. **`Acquisition.py`** acquires temperature data, which uses Adafruit DHT Humidity & Temperature Sensor Library. **`Acquisition.py`** distributes temperature data all over the system. **`dht22_project.htm`** is executed on a web browser. This module receives current temperature data from **`currentTemp.py`** and controls devices through network. **`DHT22AWS.py`** publishes current temperature information to AWS(Cloud service). Finally, **`tempInfoLCD.py`** operates a LCD device to show temperature to users.
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-diagram.JPG "System Diagram")
 ## _2. Descriptions of the System_
-### (1) Temperature data acquisition
-#### - DHT22 Temperature and Humidity Sensor
+### (1) Temperature Data Acquisition
+#### - DHT22 temperature and humidity sensor
 DHT22 sensor is a versatile temperature and humidity sensor, which has built-in analog to digital converter (ADC).
 #### - Acquision.py
 Adafruit DHT Python library is used to interact with the DHT22 temperature and humidity sensor.
@@ -23,7 +23,18 @@ def read_data():
 	humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
 	return temperature, humidity
 ```
-### (2) Temperature Control Through a Web Browser
+### (2) Temperature Monitoring
+Temperature is displayed through a LCD device and AWS (Cloud service).
+#### - LCD device
+A 16 x 2 LCD (NHD‐0216BZ‐FL‐YBW) device is used to display current temperature data.
+
+**`tempInfoLCD.py`** uses methods from **`lcd.py`** _(For more information about_ **`lcd.py`**_: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))_
+#### - Publishing temperature data to AWS
+To publish or subscribe topic and payload to AWS, MQTT (Message Queuing Telemetry Transport) protocol is used and a Raspberry Pi works as a broker.
+
+**`DHT22AWS.py`** obtains temperature data from **`Acquisition.py`**. Topic name is `DHT_project/pub` and message is current temperature information.
+
+### (3) Temperature control through a web browser
 Users can access the system through a web browser to control temperature. AJAX, HTML and CSS are used for user interaction.
 #### - dht22_project.htm
 There are three parts that show up on the web page; **`Current temperature`**, **`Automatic temperature control`**, and **`Manual device control`**. 
@@ -40,12 +51,3 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 > User can turn on and off for the devices manually. When one of the heating device and the cooling device is on, the other is off. Automatic temperature control part is disabled while Manual device control part is activated.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-web.JPG "Web control")
-
-### (3) Temperature Monitoring
-Temperature is displayed through a LCD device and AWS (Cloud service).
-#### - LCD device
-A 16 x 2 LCD (NHD‐0216BZ‐FL‐YBW) device is used to display current temperature data.
-
-**`tempInfoLCD.py`** uses methods from **`lcd.py`** _(For more information about_ **`lcd.py`**_: [16×2 LCD Module Control Using Python](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python))_
-#### - Publishing Temperature Data to AWS
-To publish or subscribe topic and payload to AWS, MQTT (Message Queuing Telemetry Transport) protocol is used and a Raspberry Pi works as a broker. **`DHT22AWS.py`** obtains the temperature data from **`Acquisition.py`**. Topic name is `DHT_project/pub` and message is current temperature information.
