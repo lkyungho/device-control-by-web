@@ -55,7 +55,7 @@ There are three parts that show up on the web page; **`Current temperature`**, *
 
 ## _3. Result_
 ### (1) Wiring of the Devices
-For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs.
+For demonstration purpose, the wiring for the heating device and the cooling device is connected to LEDs. The LCD displays the current temperature and humidity.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-wiring.JPG "Wiring")
 
