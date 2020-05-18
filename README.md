@@ -68,4 +68,5 @@ If manual device control is activated, automatic temperature control is disabled
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-webpage.JPG "Web page")
 ### (3) AWS
 Temperature data is published to AWS. Users can monitor temperature via Internet.
+
 ![alt text](https://github.com/lkyungho/Images/blob/master/temperature-control-aws.JPG "AWS")
